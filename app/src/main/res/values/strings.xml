@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab04</string>
+    <string name="enterEmail">Enter your email address: </string>
+    <string name="enterEmailHint">Type email here</string>
+    <string name="enterPassword">Type your password: </string>
+    <string name="loginBtn">LOGIN</string>
+    <string name="callNumber">CALL NUMBER</string>
+    <string name="changePic">Change Picture</string>
+</resources>
