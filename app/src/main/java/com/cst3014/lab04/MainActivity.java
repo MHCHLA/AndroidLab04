@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button loginButton = (Button) findViewById(R.id.loginButton);
         EditText emailEditText =  findViewById(R.id.emailEditText);
-
         Intent nextPage = new Intent( MainActivity.this, SecondActivity.class);
-        Intent: nextPage.putExtra( "EmailAddress", emailEditText.getText().toString());
 
-        loginButton.setOnClickListener( clk-> {startActivity( nextPage); } );
+        loginButton.setOnClickListener( clk-> {
+            Intent: nextPage.putExtra( "EmailAddress", emailEditText.getText().toString());
+            startActivity( nextPage); } );
 
         SharedPreferences prefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         prefs.getString("VariableName", "");
@@ -30,8 +29,5 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("LoginName", emailEditText.getText().toString());
         editor.apply();
-
-
-
     }
 }

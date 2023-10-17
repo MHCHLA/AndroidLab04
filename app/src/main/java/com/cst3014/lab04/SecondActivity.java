@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -34,12 +33,17 @@ public class SecondActivity extends AppCompatActivity {
 
         Button callBtn = (Button) findViewById(R.id.callBtn);
         TextView text = (TextView) findViewById(R.id.textViewPage2);
-        EditText phoneNumber = (EditText) findViewById(R.id.editTextPhone);
+        EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber1);
         String emailAddress = fromPrevious.getStringExtra("EmailAddress");
         text.setText("Welcome back "+ emailAddress);
-        Intent call = new Intent(Intent.ACTION_DIAL);
+
         Intent cameraIntent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
-        callBtn.setOnClickListener( clk-> {call.setData(Uri.parse("tel:" + phoneNumber));} );
+
+        callBtn.setOnClickListener( clk-> {
+            Intent call = new Intent(Intent.ACTION_DIAL);
+            call.setData(Uri.parse("tel:" + phoneNumber.getText().toString()));
+            startActivity( call);
+        } );
         ImageView profileImage = (ImageView) findViewById(R.id.profileImg);
 
         File file = new File( getFilesDir(), "Picture.png");
