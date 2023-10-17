@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Button loginButton = (Button) findViewById(R.id.loginButton);
         EditText emailEditText =  findViewById(R.id.emailEditText);
         Intent nextPage = new Intent( MainActivity.this, SecondActivity.class);

@@ -30,7 +30,6 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         Intent fromPrevious = getIntent();
-
         Button callBtn = (Button) findViewById(R.id.callBtn);
         TextView text = (TextView) findViewById(R.id.textViewPage2);
         EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber1);
